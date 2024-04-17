@@ -9,7 +9,7 @@ class ClothsService {
         .get(`${api_url}/${url}`)
         .then((response) => {
           if (response && response.status === 200) {
-            resolve(response.data);
+            resolve(response?.data);
           }
         })
         .catch((err) => {

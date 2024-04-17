@@ -66,6 +66,13 @@ const CardCategoryText = styled.div`
   font-size: 50px;
 `;
 
+const ErrorText = styled.div`
+  color: #b7b7b7;
+  font-weight: 700;
+  font-size: 20px;
+  width: 100%;
+`;
+
 export {
   CardContentWrapper,
   CardTitle,
@@ -75,4 +82,5 @@ export {
   CardAmount,
   CardCategory,
   CardCategoryText,
+  ErrorText,
 };

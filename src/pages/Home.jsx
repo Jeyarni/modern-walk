@@ -4,6 +4,7 @@ import CardView from "../components/CardView";
 import Category from "../components/Category";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCloths } from "../redux/cloths/clothsAction";
+import ErrorContent from "../components/ErrorContent";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -21,15 +22,17 @@ const Home = () => {
     <>
       <Title>Flash Sale</Title>
       <CardGroup>
-        {clothsData
-          ?.filter(
-            (item) =>
-              item.category === "women's clothing" ||
-              item.category === "men's clothing"
-          )
-          ?.map((info) => (
-            <CardView data={info} key={info?.id} />
-          ))}
+        {clothsData?.length > 0 ? (
+          clothsData
+            ?.filter(
+              (item) =>
+                item.category === "women's clothing" ||
+                item.category === "men's clothing"
+            )
+            ?.map((info) => <CardView data={info} key={info?.id} />)
+        ) : (
+          <ErrorContent />
+        )}
       </CardGroup>
       <Title>Categories</Title>
       <CardGroup>

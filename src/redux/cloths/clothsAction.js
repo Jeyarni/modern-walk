@@ -26,7 +26,7 @@ export function getAllCloths() {
         if (error) {
           return dispatch({
             type: clothsType.GET_ALL_CLOTHS_FAIL,
-            error: error.response.data.message,
+            error: error.response?.data?.message,
           });
         }
       });
